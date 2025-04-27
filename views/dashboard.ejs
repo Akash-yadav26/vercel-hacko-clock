@@ -1,0 +1,196 @@
+<%- include("./navbar.ejs") %> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Waste Collection Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      /* padding: 30px; */
+      background-color: #f0f6ff;
+      color: #1e293b;
+    }
+
+    .header {
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      margin: 0;
+      color: #1d4ed8;
+    }
+
+    .welcome {
+      font-size: 16px;
+      color: #475569;
+      margin-top: 5px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #cbd5e1;
+      margin: 30px 0;
+    }
+
+    .stats-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: #e0f2fe;
+      border-radius: 12px;
+      padding: 20px;
+      flex: 1 1 30%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 26px;
+      font-weight: 700;
+      color: #0c4a6e;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: #475569;
+    }
+
+    .stat-change {
+      font-size: 13px;
+      color: #22c55e;
+      margin-top: 8px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1e3a8a;
+    }
+
+    .hotspots {
+      background: #dbeafe;
+      border-radius: 10px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e40af;
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+
+    .collectors-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .collectors-table tr {
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .collectors-table td {
+      padding: 15px 20px;
+    }
+
+    .rank {
+      font-weight: 600;
+      color: #2563eb;
+      width: 50px;
+    }
+
+    .points {
+      text-align: right;
+      font-weight: bold;
+      color: #0f172a;
+    }
+
+    .highlight {
+      color: #1d4ed8;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="welcome">
+      Welcome back, <span class="highlight">John Doe (userdata)</span>
+    </div>
+    <p>Here's an overview of the waste collection efforts.</p>
+  </div>
+
+  <hr>
+
+  <div class="stats-container">
+    <div class="stat-card">
+        <i class="fa-solid fa-box-open"></i>
+      <div class="stat-value">17.2 kg</div>
+      <div class="stat-label"> <h4> Total Plastic Collected </h4></div>
+      <div class="stat-change"><h3> ↑ 1.5%  </h3> </div>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-chart-line"></i>
+      <div class="stat-value">17.2 kg</div>
+      <div class="stat-label">
+        <h4> Ocean Plastic Prevented
+            </h4>
+        </div>
+      <div class="stat-change"> <h4> ↑ 1.5%  </h4> </div>
+    </div>
+    <div class="stat-card">
+        <i class="fa-solid fa-users"></i>
+      <div class="stat-value">237</div>
+      <h4>  <div class="stat-label">Active Collectors</div> </h4>
+      <div class="stat-change"> <h4>  ↑ 1.5% </h4></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="section-title">Waste Collection Hotspots</div>
+  <div class="hotspots">Map visualization would appear here</div>
+
+  <div class="section-title">Top Collectors</div>
+  <table class="collectors-table">
+    <tr>
+      <td class="rank">#1</td>
+      <td>Raj Patel</td>
+      <td class="points">1450 pts</td>
+    </tr>
+    <tr>
+      <td class="rank">#2</td>
+      <td>Priya Sharma</td>
+      <td class="points">1320 pts</td>
+    </tr>
+    <tr>
+      <td class="rank">#3</td>
+      <td>Maria Silva</td>
+      <td class="points">1280 pts</td>
+    </tr>
+    <tr>
+      <td class="rank">#4</td>
+      <td class="highlight">John Doe</td>
+      <td class="points">1250 pts</td>
+    </tr>
+  </table>
+
+</body>
+</html>
+
+<%- include("./footer.ejs") %> 

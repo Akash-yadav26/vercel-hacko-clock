@@ -1,0 +1,74 @@
+<%- include("./navbar.ejs") %> 
+
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f6ff;
+    color: #1e293b;
+    /* padding: 40px; */
+  }
+
+  h2 {
+    text-align: center;
+    color: #1d4ed8;
+    margin-bottom: 30px;
+  }
+
+  .leaderboard {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .entry {
+    background-color: #ffffff;
+    border-left: 6px solid #3b82f6;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+
+  .entry h3 {
+    margin: 8px 0;
+    font-weight: 500;
+    color: #0f172a;
+  }
+
+  .entry h3 span {
+    color: #2563eb;
+    font-weight: 600;
+  }
+
+  button {
+    display: block;
+    margin: 30px auto 0;
+    padding: 12px 24px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #1e40af;
+  }
+</style>
+
+<h2>Waste Details Leaderboard</h2>
+
+<div class="leaderboard">
+  <% for (let user of userdata) { %>
+    <div class="entry">
+      <h3>📍Location: <span><%= user.location %></span></h3>
+      <h3>♻ Plastic Type: <span><%= user.plastic %></span></h3>
+      <h3>⚖ Weight (KG): <span><%= user.weight %></span></h3>
+    </div>
+  <% } %>
+</div>
+
+<button onclick="window.location.href='/'">
+  ⬅ Get back to Home page
+</button>
